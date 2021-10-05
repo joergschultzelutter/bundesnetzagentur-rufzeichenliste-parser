@@ -2,6 +2,8 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
+(As this program mainly targets a German audience, this Readme is in German, too. However, the program uses English comments)
+
 Quick-Hack zum Herunterladen der jeweils aktuellen Rufzeichenliste der Bundesnetzagentur. Anschließend werden alle vorhandenen Rufzeichen extrahiert und auf stdout in einem csv-Format zur weiteren maschinellen Verarbeitung ausgegeben. 
 
 Das Programm besitzt keinerlei Ein- und Ausgabeparameter. Nach dem Start kann es 20-30 Sekunden dauern, bis die relativ große pdf-Datei der Bundesnetzagentur initial analysiert worden ist. Da die komplette Ausgabe gegen stdout erfolgt, werden während dieser Zeit keine Informationen auf dem Bildschirm ausgegeben.
