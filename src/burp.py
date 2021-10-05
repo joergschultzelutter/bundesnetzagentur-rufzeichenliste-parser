@@ -27,6 +27,7 @@ from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
+import re
 
 # Set up the global logger variable
 logging.basicConfig(
@@ -58,6 +59,7 @@ if __name__ == "__main__":
 	file_content= get_rufzeichen_file()
 	if file_content:
 
+
 		output_string = StringIO()
 
 
@@ -80,8 +82,36 @@ if __name__ == "__main__":
 		print ("Loop doc")
 		# loop over all pages in the document
 		for page in PDFPage.create_pages(document):
-			print ("loop")
 			interpreter.process_page(page)
-			print (output_string.getvalue())
+			lines = output_string.getvalue().split("\n") 
+
+			parser_value = ""
+			attach_value = False
+
+			for line in lines:
+				matches = re.search(r"^(D[A-D|F-R][0-9][A-Z]{1,3}),\s(A|E),",line)
+				if matches:
+					if parser_value != "":
+						matches = re.search(r"^(D[A-D|F-R][0-9][A-Z]{1,3}),\s(A|E),",parser_value)
+						if matches:
+							print (parser_value)
+					parser_value = line
+				else:
+					if "Liste der" in line:
+						attach_value = False
+						if parser_value != "":
+							matches = re.search(r"^(D[A-D|F-R][0-9][A-Z]{1,3}),\s(A|E),",parser_value)
+							if matches:
+								print (parser_value)
+						parser_value = ""
+					elif "Seite" in line:
+						attach_value = True
+					else:
+						if attach_value and line.strip() != "":
+							parser_value = parser_value + line
+			if parser_value != "":
+				matches = re.search(r"^(D[A-D|F-R][0-9][A-Z]{1,3}),\s(A|E),",parser_value)
+				if matches:
+					print (parser_value)
 			output_string.seek(0)
 			output_string.truncate(0)
