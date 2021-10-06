@@ -15,9 +15,14 @@ Benötigte pip-pakete:
 - [pdfminer.six](https://github.com/pdfminer/pdfminer.six)
 - [requests](https://github.com/psf/requests)
 
+Installation aller Pakete via
+
+    pip install -r dependencies.txt
+
 ## Aufruf
 
-Programm einfach ohne Parameter aufrufen. Die Rufzeichenliste wird heruntergeladen, analysiert und anschließend zeilenweise auf dem Bildschirm ausgegeben.
+Programm einfach ohne Parameter aufrufen. Die Rufzeichenliste wird heruntergeladen, analysiert und anschließend zeilenweise auf dem Bildschirm ausgegeben. Die Datenstruktur ist identisch mit der in der pdf-Datei verwendeten Datenstruktur - d.h. Callsign, Klasse (A/E), Name und Anschrift(en)
 
 ## Bekannte Einschränkungen
-- Die PDF-Quelldatei besteht aus insgesamt drei Spalten. Ist die Seite nicht vollständig gefüllt (z.B. neue Kategorie beginnt auf der nächsten Seite), so wird im Extrakt die Reihenfolge der Einträge möglicherweise nicht korrekt in das CSV-Dateiformat überführt. Da die erzeugte CSV-Datei aber eh maschinell weiterverarbeitet werden wird, sollte dieser Punkt irrelevant sein.
+
+- Die PDF-Quelldatei besteht aus insgesamt drei Spalten. Ist eine Seite der pdf-Datei nicht vollständig gefüllt (z.B. weil auf der Folgeseite eine neue Dokument-Kategorie beginnt), so wird im Extrakt die Reihenfolge der Einträge möglicherweise nicht korrekt in das CSV-Dateiformat überführt. Da die erzeugte CSV-Datei aber eh maschinell weiterverarbeitet werden wird, sollte dieser Punkt irrelevant sein.
