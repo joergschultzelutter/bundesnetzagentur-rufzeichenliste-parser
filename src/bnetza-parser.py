@@ -46,8 +46,8 @@ def get_rufzeichen_file(
     request_url: str = "https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Amateurfunk/Rufzeichenliste/Rufzeichenliste_AFU.pdf?__blob=publicationFile",
 ):
     """
-    Imports the ICAO/IATA data from a local file. Creates dictionaries for
-    IATA-ICAO mapping and IATA-lat/lon mapping
+    Downloads the Bundesnetzagentur Rufzeichenliste pdf and returns the binary blob.
+    Blob is 'None' if the function was unable to download the file
     Parameters
     ==========
     url : 'str'
