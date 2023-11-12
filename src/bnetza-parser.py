@@ -43,7 +43,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_rufzeichen_file(
-    request_url: str = "https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Amateurfunk/Rufzeichenliste/Rufzeichenliste_AFU.pdf?__blob=publicationFile",
+    request_url: str = "https://data.bundesnetzagentur.de/Bundesnetzagentur/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Amateurfunk/Rufzeichenliste/rufzeichenliste_afu.pdf",
 ):
     """
     Downloads the Bundesnetzagentur Rufzeichenliste pdf and returns the binary blob.
