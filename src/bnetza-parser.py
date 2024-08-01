@@ -111,7 +111,7 @@ if __name__ == "__main__":
         interpreter = PDFPageInterpreter(rsrcmgr, device)
 
         # regex for German call signs
-        regex_string = r"^(D[A-D|F-R][0-9][A-Z]{1,3}),\s(A|E),"
+        regex_string = r"^(D[A-D|F-R][0-9][A-Z]{1,3}),\s(A|E|N),"
 
         # loop over all pages in the document
         for page in PDFPage.create_pages(document):
