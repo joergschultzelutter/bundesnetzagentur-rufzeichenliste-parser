@@ -21,7 +21,7 @@ Installation aller Pakete via
 
 ## Aufruf
 
-Programm einfach ohne Parameter aufrufen. Die Rufzeichenliste wird heruntergeladen, analysiert und anschließend zeilenweise auf dem Bildschirm ausgegeben. Die Datenstruktur ist identisch mit der in der pdf-Datei verwendeten Datenstruktur - d.h. Callsign, Klasse (A/E), Name und Anschrift(en)
+Programm einfach ohne Parameter aufrufen. Die Rufzeichenliste wird heruntergeladen, analysiert und anschließend zeilenweise auf dem Bildschirm ausgegeben. Die Datenstruktur ist identisch mit der in der pdf-Datei verwendeten Datenstruktur - d.h. Callsign, Klasse (A/E/N) und -sofern vorhanden- Name und Anschrift(en)
 
 ## Bekannte Einschränkungen
 
